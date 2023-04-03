@@ -1,0 +1,30 @@
+<dataConfig> 
+    <dataSource type="JdbcDataSource" name="v3_course" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1/course_batches" user="root" password=""/> 
+
+
+    <document name="advertisements">
+            <entity name="advertisements" dataSource="v3_course" query="SELECT * from advertisements" >
+              
+                <entity name="categories" dataSource="v3_course" query="SELECT cat.advertisement_category_id as categories FROM advertisement_categories as  
+                   cat where cat.advertisement_id='${advertisements.id}'">
+			    </entity>
+            
+                <entity name="professions" dataSource="v3_course" query="SELECT atpp.ad_target_people_profession_id as professions FROM ad_target_people_profession as  
+                   atpp where atpp.advertisement_id='${advertisements.id}'">
+			    </entity>
+
+                <entity name="divisions" dataSource="v3_course" query="SELECT atpdiv.division_id as divisions FROM ad_target_people_area as  
+                   atpdiv where atpdiv.advertisement_id='${advertisements.id}'">
+			    </entity>
+
+                <entity name="districts" dataSource="v3_course" query="SELECT atpdis.district_id as districts FROM ad_target_people_area as  
+                   atpdis where atpdis.advertisement_id='${advertisements.id}'">
+                </entity>
+
+                <entity name="subdistricts" dataSource="v3_course" query="SELECT atpsub.sub_district_id as subdistricts FROM ad_target_people_area as  
+                   atpsub where atpsub.advertisement_id='${advertisements.id}'">
+                </entity>
+            </entity>
+ 
+    </document>
+ </dataConfig>

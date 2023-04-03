@@ -1,0 +1,11 @@
+districts:(1 AND 2 AND 7) - districts%3A(1%20AND%205%20AND%207)
+
+professions:(2 OR 3) - professions%3A(2%20OR%203)
+
+divisions:(1 AND 3) - divisions%3A(1%20AND%203)
+
+professions:(2 AND 3) AND divisions:(1 AND 3) AND districts:(1 AND 2 AND 5) - professions%3A(2%20AND%203)%20AND%20divisions%3A(1%20AND%203)%20AND%20districts%3A(1%20AND%202%20AND%205)
+
+start_date:[2022-11-02T12:23:06Z TO NOW] - start_date%3A%5B2022-11-02T12%3A23%3A06Z%20TO%20NOW%5D
+
+start_date:[2022-11-02T12:23:06Z TO 2022-11-08T12:25:15Z] - start_date%3A%5B2022-11-02T12%3A23%3A06Z%20TO%202022-11-08T12%3A25%3A15Z%5D
